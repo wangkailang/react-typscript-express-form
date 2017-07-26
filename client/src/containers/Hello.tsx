@@ -1,5 +1,5 @@
 import Hello from '../components/Hello';
-import * as actions from '../actions';
+import * as ageActions from '../actions/age';
 import { StoreState } from '../types/index';
 import { connect, Dispatch } from 'react-redux';
 
@@ -12,10 +12,10 @@ export function mapStateToProps({ age, name }: StoreState) {
 }
 
 // actions
-export function mapDispatchToProps(dispatch: Dispatch<actions.AgeAction>) {
+export function mapDispatchToProps(dispatch: Dispatch<ageActions.AgeActionType>) {
   return {
-    onIncrement: () => dispatch(actions.incrementAge()),
-    onDecrement: () => dispatch(actions.decrementAge()),
+    onIncrement: () => dispatch(ageActions.incrementAge()),
+    onDecrement: () => dispatch(ageActions.decrementAge()),
   };
 }
 

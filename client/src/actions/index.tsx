@@ -1,23 +1,7 @@
-import * as constants from '../constants';
+import * as ageActions from './age';
 
-export interface IncrementAge {
-  type: constants.INCREMENT_AGE;
-}
+const actions: object = {
+  ageActions,
+};
 
-export interface DecrementAge {
-  type: constants.DECREMENT_AGE;
-}
-
-export type AgeAction = IncrementAge | DecrementAge;
-
-export function incrementAge(): IncrementAge {
-  return {
-    type: constants.INCREMENT_AGE
-  };
-}
-
-export function decrementAge(): DecrementAge {
-  return {
-    type: constants.DECREMENT_AGE
-  };
-}
+export default actions;

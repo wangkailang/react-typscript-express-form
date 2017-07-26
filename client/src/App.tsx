@@ -37,7 +37,10 @@ class App extends React.Component<{}, AppState> {
   }
   render() {
     const { datas } = this.state;
-    if (!lodash.keys(datas).length) return null;
+    if (!lodash.keys(datas).length) {
+      return null;
+    }
+      
     return (
       <div className="App">
         <div className="App-header">
@@ -55,6 +58,7 @@ class App extends React.Component<{}, AppState> {
   }
   private async fetchData(url: string) {
     const datas = await fetch(url).then(res => res.json());
+    console.log('--', this);
     this.setState({ datas });
   }
 }

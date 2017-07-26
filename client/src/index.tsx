@@ -1,19 +1,22 @@
 // 声明window
 // https://github.com/piotrwitek/react-redux-typescript-guide#create-store
-declare const window: Window & { devToolsExtension: any, __REDUX_DEVTOOLS_EXTENSION__: any };
+declare const window: Window & { devToolsExtension: any, __REDUX_DEVTOOLS_EXTENSION__: any }; // eslint-disable-line
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import { age } from './reducers/index';
-import { StoreState } from './types/index';
+import { createStore, applyMiddleware, compose } from 'redux';
+import rootReducer from './reducers/index';
 import App from './App';
+import { logger } from './middleware';
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 
-const store = createStore<StoreState>(
-  age,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+const store: any = createStore(
+  rootReducer,
+  compose(
+    applyMiddleware(logger),
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+  )
 );
 
 ReactDOM.render(

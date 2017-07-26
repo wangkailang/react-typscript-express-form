@@ -1,4 +1,4 @@
 export interface StoreState {
-  name: string;
+  readonly name: string;
   age: number;
 }
