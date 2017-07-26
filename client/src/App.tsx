@@ -51,13 +51,15 @@ class App extends React.Component<{}, AppState> {
         <p className="App-intro">
           hello
           {' '}
-          {lodash.get(datas, 'data.name')}
+          {lodash.get(datas, 'data.name') || lodash.get(datas, 'error')}
         </p>
       </div>
     );
   }
   private async fetchData(url: string) {
-    const datas = await fetch(url).then(res => res.json());
+    const datas = await fetch(url).then(res => res.json()).catch(() => ({
+      error: 'something error',
+    }));
     console.log('--', this);
     this.setState({ datas });
   }
