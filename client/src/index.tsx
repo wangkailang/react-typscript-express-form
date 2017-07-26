@@ -10,7 +10,7 @@ import App from './App';
 import { logger } from './middleware';
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
-// import 'bootstrap/dist/css/bootstrap.css';
+import '../src/style/bootstrap/css/bootstrap.min.css';
 
 const store: any = createStore(
   rootReducer,

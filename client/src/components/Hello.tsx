@@ -1,21 +1,21 @@
 import * as React from 'react';
 
 export interface Props {
-  name: string;
-  age?: number;
+  props: {
+    age: {
+      name: string;
+      age?: number;
+    }
+  };
   onIncrement?: () => void;
   onDecrement?: () => void;
 }
 
-function Hello({ name, age = 1, onIncrement, onDecrement }: Props) {
-  if (age <= 0) {
-    throw new Error('You could be not right');
-  }
-
+function Hello({ props: { age }, onIncrement, onDecrement }: Props) {
   return (
     <div>
       <h2>
-        hello {name + ' ' + age}
+        hello {age.name + ' ' + age.age}
       </h2>
       <div>
         <button onClick={onDecrement}>-</button>
