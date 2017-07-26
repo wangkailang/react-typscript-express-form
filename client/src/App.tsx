@@ -1,5 +1,6 @@
 import * as React from 'react';
 import './App.css';
+import Hello from './containers/Hello';
 import * as lodash from 'lodash';
 
 import 'whatwg-fetch';
@@ -36,12 +37,16 @@ class App extends React.Component<{}, AppState> {
   }
   render() {
     const { datas } = this.state;
-    if(!lodash.keys(datas).length) return null;
+    if (!lodash.keys(datas).length) {
+      return null;
+    }
+      
     return (
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to React</h2>
+          <Hello />
         </div>
         <p className="App-intro">
           hello
@@ -53,6 +58,7 @@ class App extends React.Component<{}, AppState> {
   }
   private async fetchData(url: string) {
     const datas = await fetch(url).then(res => res.json());
+    console.log('--', this);
     this.setState({ datas });
   }
 }
