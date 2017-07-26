@@ -4,10 +4,9 @@ import { StoreState } from '../types/index';
 import { connect, Dispatch } from 'react-redux';
 
 // state datas
-export function mapStateToProps({ age, name }: StoreState) {
+export function mapStateToProps(props: { age: StoreState}) {
   return {
-    age,
-    name,
+    props
   };
 }
 

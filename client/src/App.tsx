@@ -1,6 +1,7 @@
 import * as React from 'react';
 import './App.css';
 import Hello from './containers/Hello';
+import Navigation from './components/Navigation';
 import * as lodash from 'lodash';
 
 import 'whatwg-fetch';
@@ -43,6 +44,7 @@ class App extends React.Component<{}, AppState> {
       
     return (
       <div className="App">
+        <Navigation/>
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to React</h2>
@@ -57,8 +59,9 @@ class App extends React.Component<{}, AppState> {
     );
   }
   private async fetchData(url: string) {
-    const datas = await fetch(url).then(res => res.json());
-    console.log('--', this);
+    const datas = await fetch(url).then(res => res.json()).catch(() => ({
+      error: 'something error',
+    }));
     this.setState({ datas });
   }
 }
