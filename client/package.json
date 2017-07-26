@@ -1,0 +1,29 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "proxy": "http://localhost:3001",
+  "devDependencies": {
+    "react-scripts-ts": "2.3.2"
+  },
+  "dependencies": {
+    "@types/jest": "^20.0.2",
+    "@types/lodash": "^4.14.68",
+    "@types/node": "^8.0.8",
+    "@types/react": "^15.0.35",
+    "@types/react-bootstrap": "0.0.52",
+    "@types/react-dom": "^15.5.1",
+    "@types/react-redux": "^4.4.46",
+    "@types/react-router-dom": "^4.0.5",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-redux": "^5.0.5",
+    "redux": "^3.7.2"
+  },
+  "scripts": {
+    "start": "PORT=4000 react-scripts-ts start",
+    "build": "PORT=4000 react-scripts-ts build",
+    "test": "PORT=4000 react-scripts-ts test --env=jsdom",
+    "eject": "PORT=4000 react-scripts-ts eject"
+  }
+}
