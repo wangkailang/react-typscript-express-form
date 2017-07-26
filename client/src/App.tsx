@@ -33,7 +33,7 @@ class App extends React.Component<{}, AppState> {
     this.fetchData = this.fetchData.bind(this);
   }
   componentDidMount() {
-    this.fetchData('/api/hello');
+    this.fetchData('/api/hello/no');
   }
   render() {
     const { datas } = this.state;
@@ -60,7 +60,6 @@ class App extends React.Component<{}, AppState> {
     const datas = await fetch(url).then(res => res.json()).catch(() => ({
       error: 'something error',
     }));
-    console.log('--', this);
     this.setState({ datas });
   }
 }
