@@ -1,3 +1,16 @@
-.Navigation {
-  width: 200px;
+@import '../../style/variables.css';
+
+.Navigation__link {
+  color: var(--white);
+  display: block;
+  line-height: 36px;
+  padding-left: 35px;
+}
+.Navigation__link:hover,
+.Navigation__link:focus,
+.Navigation__link:active,
+.Navigation__link--active {
+  color: var(--white);
+  text-decoration: none;
+  background-color: #543;
 }
