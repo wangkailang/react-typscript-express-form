@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "proxy": "http://localhost:3001",
+  "homepage": "https://wangkailang.github.io/react-typscript-express-form/",
   "devDependencies": {
+    "gh-pages": "^1.0.0",
     "react-scripts-ts": "2.3.2"
   },
   "dependencies": {
@@ -24,6 +26,7 @@
     "start": "PORT=4000 react-scripts-ts start",
     "build": "PORT=4000 react-scripts-ts build",
     "test": "PORT=4000 react-scripts-ts test --env=jsdom",
-    "eject": "PORT=4000 react-scripts-ts eject"
+    "eject": "PORT=4000 react-scripts-ts eject",
+    "deploy": "npm run build && node ./scripts/deploy.js"
   }
 }
