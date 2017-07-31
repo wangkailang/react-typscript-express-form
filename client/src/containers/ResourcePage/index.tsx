@@ -13,6 +13,5 @@ const resourceMap: object = {
 export default function ResourcePage(props: { pathname: string }) {
   const { pathname } = props;
   const Component = resourceMap[pathname.split('/')[2] || 'default'] ;
-  console.log('----', Component);
   return <Component/>;
 }
