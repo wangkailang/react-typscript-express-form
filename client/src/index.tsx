@@ -6,10 +6,12 @@ import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 import rootReducer from './reducers/index';
-import App from './App';
+import { BrowserRouter } from 'react-router-dom';
+import routes from './routes';
 import { logger } from './middleware';
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
+import '../src/style/bootstrap/css/bootstrap.min.css';
 
 const store: any = createStore(
   rootReducer,
@@ -21,7 +23,7 @@ const store: any = createStore(
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+   <BrowserRouter children={routes}/>
   </Provider>,
   document.getElementById('root') as HTMLElement
 );

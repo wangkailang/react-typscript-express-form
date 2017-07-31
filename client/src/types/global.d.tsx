@@ -4,3 +4,8 @@
 declare interface Window {
   devToolsExtension?(): (args?: any) => any;
 }
+
+declare interface NavItemProps {
+  title: string;
+  path: string;
+};
