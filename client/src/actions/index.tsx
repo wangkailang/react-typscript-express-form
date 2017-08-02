@@ -1,6 +1,10 @@
 import * as ageActions from './age';
 
-const actions: object = {
+export interface Actions {
+  ageActions: object;
+}
+
+const actions: Actions = {
   ageActions,
 };
 
