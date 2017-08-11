@@ -1,16 +1,22 @@
 
+.Dashboard {
+  flex-direction: row;
+  display: flex;
+  flex: auto;
+}
+.Dashboard__sidebar--open{
+  flex: 0 0 200px;
+  padding-left: 35px;
+}
+.Dashboard__sidebar--close {
+  flex: 0 0 50px;
+}
 .Dashboard__sidebar {
-  width: 200px;
+  transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   background: #000;
-  position: absolute;
-  top: 0;
-  bottom: 0
 }
 .Dashboard__main {
-  background: #879;
-  position: absolute;
-  left: 200px;
-  top: 0;
-  bottom: 0;
-  right: 0;
+  display: flex;
+  flex-direction: column;
+  flex: auto;
 }

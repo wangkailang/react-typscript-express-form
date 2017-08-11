@@ -8,4 +8,5 @@ declare interface Window {
 declare interface NavItemProps {
   title: string;
   path: string;
+  toggleState?: boolean;
 };

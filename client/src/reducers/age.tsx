@@ -1,13 +1,16 @@
 import { AgeActionType } from '../actions/age';
-import { StoreState } from '../types/index';
 import { INCREMENT_AGE, DECREMENT_AGE } from '../constants/index';
 
+interface State {
+  age: number,
+  name: string,
+}
 const initialState = {
   age: 1,
   name: 'typescript',
 };
 
-export function age(state: StoreState = initialState, action: AgeActionType): StoreState {
+export function age(state: State = initialState, action: AgeActionType) {
   switch (action.type) {
     case INCREMENT_AGE:
       return { ...state, age: state.age + 1 };

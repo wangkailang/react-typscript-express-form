@@ -26,16 +26,20 @@ interface AppState {
 }
 
 class App extends React.Component<{}, AppState> {
-  constructor(props: {}) {
-    super(props);
-    this.state = {
-      datas: {},
-    };
-    this.fetchData = this.fetchData.bind(this);
+  // constructor(props: {}) {
+  //   super(props);
+  //   this.state = {
+  //     datas: {},
+  //   };
+  //   this.fetchData = this.fetchData.bind(this);
+  // }
+  state: AppState = {
+    datas: {},
   }
   componentDidMount() {
     this.fetchData('/api/hello');
   }
+  
   render() {
     const { datas } = this.state;
     if (!lodash.keys(datas).length) {
