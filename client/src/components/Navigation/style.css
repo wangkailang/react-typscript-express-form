@@ -4,7 +4,6 @@
   color: var(--white);
   display: block;
   line-height: 36px;
-  padding-left: 35px;
 }
 .Navigation__link:hover,
 .Navigation__link:focus,

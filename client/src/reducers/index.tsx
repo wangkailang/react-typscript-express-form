@@ -1,11 +1,9 @@
 import { combineReducers } from 'redux';
 import { age } from './age';
+import { toggle } from './toggle';
 import { StoreState } from '../types';
 
-export interface RootState {
-  age: StoreState;
-}
-
-export default combineReducers<RootState>({
+export default combineReducers<StoreState>({
   age,
+  toggleState: toggle,
 });

@@ -1,4 +1,7 @@
 export interface StoreState {
-  readonly name: string;
-  age: number;
+  age?: {
+    readonly name: string;
+    age: number;
+  },
+  toggleState?: boolean,
 }

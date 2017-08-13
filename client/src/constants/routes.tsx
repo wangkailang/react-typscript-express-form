@@ -7,6 +7,9 @@ const navItemArray: NavItemProps[] = [{
 }, {
   title: '表格',
   path: '/dashboard/table',
+}, {
+  title: '图表',
+  path: '/dashboard/chart',
 }];
 
 export default navItemArray;

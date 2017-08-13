@@ -1,7 +1,14 @@
 import * as ageActions from './age';
+import * as toggleActions from './toggle';
 
-const actions: object = {
+export interface Actions {
+  ageActions: object,
+  toggleActions: object,
+}
+
+const actions: Actions = {
   ageActions,
+  toggleActions,
 };
 
 export default actions;
