@@ -18,12 +18,14 @@
     "@types/react-dom": "^15.5.1",
     "@types/react-redux": "^4.4.46",
     "@types/react-router-dom": "^4.0.5",
+    "@types/reselect": "^2.2.0",
     "chart.js": "^2.6.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.2",
-    "redux": "^3.7.2"
+    "redux": "^3.7.2",
+    "reselect": "^3.0.1"
   },
   "scripts": {
     "start": "PORT=4000 react-scripts-ts start",

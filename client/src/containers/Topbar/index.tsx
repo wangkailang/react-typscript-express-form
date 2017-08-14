@@ -1,25 +1,23 @@
 import * as React from 'react';
 import { Nav, Navbar, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
-import * as  toggleActions from '../../actions/toggle';
 import { connect, Dispatch } from 'react-redux';
-import { StoreState } from '../../types/index';
+import actions from '../../actions';
+import { Toggle } from '../../actions/interface';
+import { filterSelectors } from '../../selectors';
 
 const connector: any = connect(
-  (props: StoreState) => {  // mapStateToProps
+  filterSelectors('toggleState'),   // mapStateToProps
+  (dispatch: Dispatch<Toggle>) => {  // mapDispatchToProps
     return {
-      toggleState: props.toggleState,
-    };
-  },
-  (dispatch: Dispatch<toggleActions.Toggle>) => {  // mapDispatchToProps
-    return {
-      toggle: () => dispatch(toggleActions.toggle()),
+      toggle: () => dispatch(actions.toggle()),
     }
   }
+
 )
 
 interface Props {
   toggleState: boolean,
-  toggle: () => boolean,
+  toggle: () => Toggle,
 }
 
 const Topbar: React.SFC<Props> = (props) => {
