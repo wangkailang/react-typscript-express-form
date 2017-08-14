@@ -4,7 +4,6 @@
  * convenient alias: ` React.SFC<Props> === React.StalelessComponent<Props> `
  */
 import * as React from 'react';
-// import * as Chart from 'chart.js';
 import { Panel } from 'react-bootstrap';
 import BaiscChart from '../../components/Chart';
 

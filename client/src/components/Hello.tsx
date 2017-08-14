@@ -1,17 +1,17 @@
 import * as React from 'react';
+import { IncrementAge, DecrementAge } from '../actions/interface';
 
-export interface Props {
-  props: {
-    age: {
-      name: string;
-      age?: number;
-    }
-  };
-  onIncrement?: () => void;
-  onDecrement?: () => void;
+interface Props {
+  age: {
+    age: number,
+    name: string,
+  },
+  onIncrement: () => IncrementAge,
+  onDecrement: () => DecrementAge,
 }
 
-function Hello({ props: { age }, onIncrement, onDecrement }: Props) {
+const Hello: React.SFC<Props> = props => {
+  const { age, onDecrement, onIncrement } = props;
   return (
     <div>
       <h2>

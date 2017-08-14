@@ -1,12 +1,5 @@
 import * as constants from '../constants';
-
-export interface IncrementAge {
-  type: constants.INCREMENT_AGE;
-}
-
-export interface DecrementAge {
-  type: constants.DECREMENT_AGE;
-}
+import { IncrementAge, DecrementAge } from './interface';
 
 export type AgeActionType = IncrementAge | DecrementAge;
 

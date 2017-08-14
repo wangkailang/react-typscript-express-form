@@ -3,16 +3,13 @@ import { NavLink } from 'react-router-dom';
 import navItemArray from '../../constants/routes';
 import './style.css';
 import { connect } from 'react-redux';
-import { StoreState } from '../../types/index';
+import { filterSelectors } from '../../selectors';
 import { Glyphicon } from 'react-bootstrap';
+import { StoreState } from '../../types/index';
 
 const connector: any = connect(
-  (props: StoreState) => {  // mapStateToProps
-    return {
-      toggleState: props.toggleState,
-    };
-  },
-)
+  filterSelectors('toggleState'),
+);
 
 function NavItemText(props: NavItemProps, key: number) {
   const { title, path, toggleState } = props;

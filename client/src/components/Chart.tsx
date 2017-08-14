@@ -1,5 +1,10 @@
+/**
+ * https://github.com/reactjs/react-chartjs/blob/master/lib/core.js
+ * would be a good reference
+ */
 import * as React from 'react';
 import * as ReactDOM from "react-dom";
+
 // import * as Chartjs from 'chart.js';
 const Chart = require('chart.js');
 import * as lodash from 'lodash';

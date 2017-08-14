@@ -4,14 +4,11 @@ import ResourcePage from '../ResourcePage';
 import Topbar from '../Topbar';
 import './style.css';
 import { connect } from 'react-redux';
-import { StoreState } from '../../types/index';
+import { filterSelectors } from '../../selectors';
+
 const connector: any = connect(
-  (props: StoreState) => {  // mapStateToProps
-    return {
-      toggleState: props.toggleState,
-    };
-  },
-)
+  filterSelectors('toggleState'),
+);
 
 function Dashboard(props: any) {
   const { toggleState } = props;

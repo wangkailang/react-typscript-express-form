@@ -1,8 +1,5 @@
 import * as constants from '../constants';
-
-export interface Toggle {
-  type:  constants.TOGGLE_NAVIGATION,
-}
+import { Toggle } from './interface';
 
 export type ToggleType = Toggle;
 
