@@ -1,5 +1,6 @@
 # react-typscript-express-form
 form example with react typescript as client, and express as server
+[![Build Status](https://travis-ci.org/wangkailang/react-typscript-express-form.svg?branch=master)](https://travis-ci.org/wangkailang/react-typscript-express-form)
 
 ## 记录
 1. package.json 设置proxy指向server端口。这样可以通过fetch('/api/resource')获取server api。
